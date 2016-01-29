@@ -20,6 +20,22 @@
      :target target
      :version version}))
 
+(defn valid-method?
+  "Check to see if the method given is supported
+  by out server"
+  [method]
+  (some #(= method %) '("GET" "HEAD")))
+
+(defn valid-target?
+  "Check to see if http target is correct"
+  [target]
+  true)
+
+(defn valid-version?
+  "Check to see if version is HTTP/1.0 or HTTP/1.1"
+  [version]
+  (some #(= method %)))
+
 ;; Parse out the message into specific parts
 ;; Starting with the "startline"
 ;; Print the incoming message
