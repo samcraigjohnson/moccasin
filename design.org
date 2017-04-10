@@ -1,0 +1,39 @@
+#+TITLE: Moccasin Web Server
+#+STARTUP: showall
+
+* Tasks
+
+** DONE Loop on server start to handle multiple requests
+CLOSED: [2017-04-09 Sun 14:35]
+
+** TODO Add logging
+
+** TODO Handle each new request in a thread
+
+** TODO Read start line, headers, and body from request
+
+** TODO Read through [[https://tools.ietf.org/html/rfc7230][rfc]] and note tasks needed
+
+* Design
+
+** Overall Architecture
+   - Open up a port to listen for requests
+   - Spawn a thread for each incoming request
+   - Read start line, headers and body
+   - Send hash of request to "application server"
+   - Send response from application server to port
+
+** Data structures
+
+* References
+:PROPERTIES:
+:VISIBILITY: overview
+:END:
+** [[https://tools.ietf.org/html/rfc7231][HTTP/1.1 RFC]]
+
+*** Media Types
+
+
+** [[https://tools.ietf.org/html/rfc7230][HTTP/1.1 Message Syntax and Routing RFC]]
+
+ 
